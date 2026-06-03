@@ -5,8 +5,6 @@ Custom switch plate files for the **Boardsource Unicorne** keyboard, adapted for
 These files were based on and modified from the original Boardsource open hardware repository:
 [boardsource/open-files](https://github.com/boardsource/open-files/tree/master)
 
----
-
 ## Available BLE Switch Plates
 
 | Plate                                | Description                                            | KiCad File                        | DXF Plot                               |
@@ -15,8 +13,6 @@ These files were based on and modified from the original Boardsource open hardwa
 | **BLE Plate without screen cutouts** | Wireless plate with a clean layout, no screen cutout   | `Kicad/ble_plate.kicad_pcb`       | `Ble Plate Plots/ble_plate.dxf`        |
 | **Original Unicorne Plate**          | The standard Unicorne switch plate layout              | `Kicad/uni_corne_plate.kicad_pcb` | `uni_corne_default_plate.dxf`          |
 | **Legacy Unicorne Plate**            | The original legacy Unicorne plate layout              | —                                 | `uni_corne_legacy_plate.dxf`           |
-
----
 
 ## File Structure
 
@@ -33,8 +29,6 @@ boardsource-wireless-plate-files/
 ├── uni_corne_default_plate.dxf   # Original Unicorne plate (DXF)
 └── uni_corne_legacy_plate.dxf    # Legacy Unicorne plate (DXF)
 ```
-
----
 
 ## Usage
 
@@ -54,7 +48,4 @@ The `.step` files in this repo are ready to be ordered via **[JLCPCB CNC Machini
 > [!NOTE]
 > If your design includes **threaded holes**, you must also upload a `.dxf` drawing alongside the `.step` file so JLCPCB can correctly identify thread specs.
 
-> [!TIP]
-> FR4 is the most cost-effective option and matches standard PCB plate aesthetics. Aluminum gives a premium feel but costs more.
-
-![JLCPCB CNC order screenshot](./assets/jlccnc.png)
+![JLCCNC CNC order screenshot](./assets/jlccnc.png)
