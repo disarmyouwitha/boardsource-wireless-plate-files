@@ -7,6 +7,9 @@ These files were based on and modified from the original Boardsource open hardwa
 
 ![BoardSource plates design](./assets/blecorne_plates.png)
 
+> [!NOTE]
+> See the plates in usage on my custom [Corne Build](https://github.com/WillACosta/zmk_bs_corne_firmware/tree/feat/zmk_custom_firmware)
+
 ## Available BLE Switch Plates
 
 | Plate                                | Description                                            | KiCad File                        | DXF Plot                               |
