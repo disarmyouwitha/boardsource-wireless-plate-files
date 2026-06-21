@@ -5,6 +5,8 @@ Custom switch plate files for the **Boardsource Unicorne** keyboard, adapted for
 These files were based on and modified from the original Boardsource open hardware repository:
 [boardsource/open-files](https://github.com/boardsource/open-files/tree/master)
 
+![BoardSource plates design](./assets/blecorne_plates.png)
+
 ## Available BLE Switch Plates
 
 | Plate                                | Description                                            | KiCad File                        | DXF Plot                               |
