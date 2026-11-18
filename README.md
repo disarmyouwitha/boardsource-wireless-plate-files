@@ -15,11 +15,16 @@ These files were based on and modified from the original Boardsource open hardwa
 | Plate                                | Description                                            | KiCad File                        | DXF Plot                               |
 | ------------------------------------ | ------------------------------------------------------ | --------------------------------- | -------------------------------------- |
 | **BLE Plate with screen cutouts**    | Wireless plate with cutouts for a small screen/display | `Kicad/ble_plate_scr.kicad_pcb`   | `Ble Plate Plots/ble_plate_screen.dxf` |
+| **BLE screen plate — LHS eight-contact opening** | Extended, open-ended header slot for StenoSquid; use the original screen plate for the RHS | `Kicad/ble_plate_scr_lhs_8pin.kicad_pcb` | `Ble Plate Plots/ble_plate_screen_lhs_8pin.dxf` |
 | **BLE Plate without screen cutouts** | Wireless plate with a clean layout, no screen cutout   | `Kicad/ble_plate.kicad_pcb`       | `Ble Plate Plots/ble_plate.dxf`        |
 | **Original Unicorne Plate**          | The standard Unicorne switch plate layout              | `Kicad/uni_corne_plate.kicad_pcb` | `uni_corne_default_plate.dxf`          |
 | **Legacy Unicorne Plate**            | The original legacy Unicorne plate layout              | —                                 | `uni_corne_legacy_plate.dxf`           |
 
 ## File Structure
+
+The new LHS opening is **22.12 mm to the inner edge × 3.08 mm high**, with a rounded switch-facing end. Reset-button holes are retained. This is a photo-matched mechanical draft; check the [actual-size sheet](assets/ble-plate-lhs-8pin-1to1.svg) on the physical host before cutting. The original screen plate and its DXF remain unchanged for the RHS. Existing STEP exports represent the original designs, **not** this LHS revision. [Dimensions and checks](docs/lhs-eight-contact-opening.md)
+
+![Original and modified left plate](assets/ble-plate-lhs-8pin-comparison.png)
 
 ```
 boardsource-wireless-plate-files/
