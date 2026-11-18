@@ -10,6 +10,12 @@ These files were based on and modified from the original Boardsource open hardwa
 > [!NOTE]
 > See the plates in usage on my custom [Corne Build](https://github.com/WillACosta/zmk_bs_corne_firmware/tree/feat/zmk_custom_firmware)
 
+## Aluminum cutting files
+
+Use [LEFT-aluminum-plate-mm.dxf](fabrication/dxf/LEFT-aluminum-plate-mm.dxf) and [RIGHT-aluminum-plate-mm.dxf](fabrication/dxf/RIGHT-aluminum-plate-mm.dxf) for quoting. Both are in millimetres, at actual size, with the right half **already mirrored**. Do not mirror them again on the vendor website. Upload one file per part and select the desired aluminum alloy, thickness and finish separately. Plate fit and thickness still require your physical check. [Cutting-file notes](fabrication/dxf/README.md)
+
+![Actual cutting DXF orientation](assets/cutting-dxf-orientation.png)
+
 ## Available BLE Switch Plates
 
 | Plate                                | Description                                            | KiCad File                        | DXF Plot                               |
@@ -23,7 +29,7 @@ These files were based on and modified from the original Boardsource open hardwa
 
 ## File Structure
 
-The new LHS opening is **22.12 mm to the inner edge × 3.08 mm high**, with a rounded switch-facing end. The large reset-button holes are retained; the two small marked holes on each revised half are removed. This is a photo-matched mechanical draft; check the [actual-size sheet](assets/ble-plate-lhs-8pin-1to1.svg) on the physical host before cutting. Both new variants fill the side USB recess while retaining reset holes and the top USB notch. The original screen plate/DXF remain unchanged as a baseline. The new RHS file retains the common source orientation: mirror it for right-hand fabrication. Existing STEP exports represent the original designs, **not** this LHS revision. [Dimensions and checks](docs/lhs-eight-contact-opening.md) · [Print-ready 1:1 PDF](output/pdf/ble-plates-1to1-fit-check.pdf) · [Manufacturing options](docs/manufacturing-options.md)
+The new LHS opening is **22.12 mm to the inner edge × 3.08 mm high**, with a rounded switch-facing end. The large reset-button holes are retained; the two small marked holes on each revised half are removed. This is a photo-matched mechanical draft; check the [actual-size sheet](assets/ble-plate-lhs-8pin-1to1.svg) on the physical host before cutting. Both new variants fill the side USB recess while retaining reset holes and the top USB notch. The original screen plate/DXF remain unchanged as a baseline. The native RHS and older source DXF retain the common source orientation. The files under `fabrication/dxf/` are the ready-oriented cutting exports; use those for quoting. Existing STEP exports represent the original designs, **not** this LHS revision. [Dimensions and checks](docs/lhs-eight-contact-opening.md) · [Print-ready 1:1 PDF](output/pdf/ble-plates-1to1-fit-check.pdf) · [Manufacturing options](docs/manufacturing-options.md)
 
 ![Modified pair with side USB recesses removed](assets/ble-plate-no-side-usb-pair.png)
 

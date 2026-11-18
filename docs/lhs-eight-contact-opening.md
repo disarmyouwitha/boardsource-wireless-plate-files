@@ -21,3 +21,7 @@ At the owner’s request the side USB recess, between the header slot and reset 
 The owner marked two small holes on each half for removal. Removed the Ø2.4 mm circles at source centres (168.619192, 94.285564) and (183.051192, 102.806564). The Ø4.2 mm reset hole at (178.9825, 101.855) and the five other circular holes remain. These coordinates use the common, unmirrored source frame. No other geometry changed in this revision.
 
 The [print-ready US Letter PDF](../output/pdf/ble-plates-1to1-fit-check.pdf) reflects this current state. It has one half per page, with the right half already mirrored, a 100 mm ruler, and a 25.4 mm square. Print at Actual Size / 100%, with no Fit or Shrink. Check physical header alignment before ordering. The [SVG](../assets/ble-plate-lhs-8pin-1to1.svg) remains a left-only alternative.
+
+## Ready-oriented cutting exports
+
+Use `fabrication/dxf/LEFT-aluminum-plate-mm.dxf` and `fabrication/dxf/RIGHT-aluminum-plate-mm.dxf` for vendor uploads. Unlike the common-orientation source DXFs described above, the RIGHT cutting file is already mirrored. Both exports omit the footprint drill marker to avoid an overlapping cut at an existing Edge.Cuts mounting circle. Geometry and dimensions are retained. The PDF already has this same final handedness.

@@ -1,0 +1,26 @@
+{
+  "LEFT": {
+    "file": "LEFT-aluminum-plate-mm.dxf",
+    "units": "mm",
+    "mirrored": false,
+    "counts": {
+      "LINE": 106,
+      "ARC": 20,
+      "CIRCLE": 6
+    },
+    "cut_length_mm": 1712.788766894953,
+    "verified": "round-trip reflection and lengths match source within 0.000001 mm"
+  },
+  "RIGHT": {
+    "file": "RIGHT-aluminum-plate-mm.dxf",
+    "units": "mm",
+    "mirrored": true,
+    "counts": {
+      "LINE": 106,
+      "ARC": 22,
+      "CIRCLE": 6
+    },
+    "cut_length_mm": 1703.279564367864,
+    "verified": "round-trip reflection and lengths match source within 0.000001 mm"
+  }
+}
