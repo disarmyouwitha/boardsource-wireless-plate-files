@@ -47,7 +47,7 @@ new=shapes(ROOT/'Kicad/ble_plate_scr_lhs_8pin.kicad_pcb')
 im=Image.new('RGB',(1800,1020),'#f5f6f8'); d=ImageDraw.Draw(im)
 font=lambda size:ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial.ttf',size)
 d.text((45,25),'BLE screen plate — left-hand 8-contact opening',font=font(34),fill='#172b42')
-d.text((45,78),'Right-hand source and both reset-button holes retained. Red marks the revised cutout.',font=font(22),fill='#435366')
+d.text((45,78),'Side USB recess filled on both halves; reset holes retained. Red marks the left header slot.',font=font(22),fill='#435366')
 for label,ss,offset in [('Original left',old,60),('Revised left',new,930)]:
     d.text((offset,140),label,font=font(28),fill='#172b42')
     xy=lambda p:(offset+(p[0]-50.166096)*5.5,210+(p[1]-38.019142)*5.5)
@@ -62,6 +62,18 @@ d.text((60,860),'Slot end extends 4.086 mm toward the switches; inner end opens 
 d.text((60,910),'Photo-matched opening: verify all eight physical header contacts with the 1:1 sheet before cutting.',font=font(23),fill='#435366')
 out=ROOT/'assets';out.mkdir(exist_ok=True)
 im.save(out/'ble-plate-lhs-8pin-comparison.png')
+pair=Image.new('RGB',(1800,850),'#f5f6f8'); pd=ImageDraw.Draw(pair)
+pd.text((50,25),'Revised pair — side USB recesses removed',font=font(34),fill='#172b42')
+pd.text((50,80),'LEFT: eight-contact opening     /     RIGHT: original display slot     /     Reset holes retained',font=font(23),fill='#435366')
+rhs=shapes(ROOT/'Kicad/ble_plate_scr_rhs_no_side_usb.kicad_pcb')
+for ss,offset,mirror in [(new,60,False),(rhs,930,True)]:
+    def xy(p):
+        x=187.616096-p[0] if mirror else p[0]-50.166096
+        return offset+x*5.5,190+(p[1]-38.019142)*5.5
+    for i,poly in enumerate(loops(ss)):
+        pd.polygon([xy(p) for p in poly],fill='#263943' if i==0 else '#f5f6f8')
+pd.text((50,775),'Native/DXF sources retain the common orientation; mirror the RHS for the finished pair.',font=font(23),fill='#435366')
+pair.save(out/'ble-plate-no-side-usb-pair.png')
 paths=[]
 for ps in new:
     xy=lambda p:(p[0]-40,p[1]-20)

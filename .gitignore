@@ -2,3 +2,4 @@
 __pycache__/
 *.pyc
 Kicad/ble_plate_scr_lhs_8pin.kicad_prl
+Kicad/ble_plate_scr_rhs_no_side_usb.kicad_prl
