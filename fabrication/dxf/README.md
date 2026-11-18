@@ -10,3 +10,9 @@ These contain only LINE, ARC and CIRCLE cuts, with no frames, labels or repeated
 The original native RHS/source DXF elsewhere in the repository remains in the common left-shaped editing orientation. Use the files in this directory for quoting. The PDF right page matches this finished orientation.
 
 `validation.json` records entity counts, cut lengths, and inverse-reflection checks. Reflection preserves arc radius and reverses/swaps arc angles to retain the same cut geometry. `tools/make_cutting_dxfs.py` rebuilds these exports after the native Edge.Cuts plots are exported in millimetres with drill shapes off. Preview: `assets/cutting-dxf-orientation.png`.
+
+## SendCutSend import check
+
+On 2026-11-18, both complete DXF exports imported into SendCutSend at 137.45 × 94.324 mm. A minimal ENTITIES-only export had been rejected, so the current files preserve KiCad's complete DXF tables, layers, handles and subclass records. Geometry, radii, units and handedness are unchanged.
+
+The owner measured the existing plate at 1.14 mm. A comparison quote for one of each in 5052 H32 aluminum at 0.040 in (1.016 mm), no finish/coating: LEFT $14.24, RIGHT $14.48; subtotal $28.72; shipping/handling $5.00; displayed total $33.72 before any tax calculation. This stock is approximately 0.124 mm thinner than the measured plate. No order placed. Prices are time-specific and not a guaranteed final checkout amount.

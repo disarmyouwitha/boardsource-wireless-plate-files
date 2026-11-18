@@ -43,26 +43,37 @@ def length(e):
     return e[40]*math.radians((e[51]-e[50])%360 if e['type']=='ARC' else 360)
 
 
-def write(file,es):
-    pairs=[(0,'SECTION'),(2,'HEADER'),(9,'$ACADVER'),(1,'AC1015'),
-           (9,'$INSUNITS'),(70,4),(9,'$MEASUREMENT'),(70,1),
-           (0,'ENDSEC'),(0,'SECTION'),(2,'ENTITIES')]
-    for e in es:
-        pairs.extend([(0,e['type']),(8,'0')])
-        pairs.extend((k,f'{v:.9f}') for k,v in e.items() if k!='type')
-    pairs.extend([(0,'ENDSEC'),(0,'EOF')])
-    file.write_text(''.join(f'{k}\n{v}\n' for k,v in pairs))
+def write(file,es,template):
+    # Keep KiCad's complete tables, layers, handles and DXF subclass records.
+    # Some quote importers reject a bare ENTITIES-only DXF even when its
+    # primitives can be read by CAD tools.
+    lines=template.read_text().splitlines()
+    pairs=[(int(c),v) for c,v in zip(lines[::2],lines[1::2])]
+    inside=False;index=-1;output=[]
+    for code,value in pairs:
+        if code==2 and value.strip()=='ENTITIES':inside=True
+        elif inside and code==0:
+            if value.strip()=='ENDSEC':inside=False
+            else:
+                index+=1
+                assert value.strip()==es[index]['type']
+        elif inside and index>=0 and code in es[index]:
+            value=f'{es[index][code]:.9f}'
+        output.append((code,value))
+    assert index==len(es)-1
+    file.write_text(''.join(f'{k:3d}\n{v}\n' for k,v in output))
 
 
 out=ROOT/'fabrication/dxf';out.mkdir(parents=True,exist_ok=True)
 report={};preview=[]
 for side,name,flip in [('LEFT','ble_plate_screen_lhs_8pin',False),
                        ('RIGHT','ble_plate_screen_rhs_no_side_usb',True)]:
-    source=read(ROOT/'Ble Plate Plots'/f'{name}.dxf')
+    template=ROOT/'Ble Plate Plots'/f'{name}.dxf'
+    source=read(template)
     assert sum(e['type']=='CIRCLE' for e in source)==6, 'Unexpected drilling circles'
     # Reflection about x=0 is sufficient: only handedness changes, never scale.
     target=[mirror(e,0) if flip else e.copy() for e in source]
-    file=out/f'{side}-aluminum-plate-mm.dxf';write(file,target)
+    file=out/f'{side}-aluminum-plate-mm.dxf';write(file,target,template)
     actual=read(file)
     assert len(actual)==len(source)
     assert math.isclose(sum(map(length,source)),sum(map(length,actual)),abs_tol=1e-6)
