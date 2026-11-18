@@ -21,6 +21,23 @@ SIDE_IDS = {
     '40976bf0-19de-460f-ad64-224d4f51e16b',
 }
 
+UNUSED_HOLES = {
+    '9340c285-5767-42d5-8b6d-63fe2a40ddf3',  # Ø2.4 below header slot
+    '2d6db888-4e40-41c8-b701-07170fc894bc',  # Ø2.4 beside reset hole
+}
+
+
+def remove_unused_holes(file):
+    text = file.read_text()
+    holes = [n for _, _, n in nodes(text) if kind(n) == 'gr_circle']
+    removed = [n for n in holes if any(uid in n for uid in UNUSED_HOLES)]
+    assert len(removed) == 2
+    for node in removed: text = text.replace(node, '')
+    assert all(n in text for n in holes if n not in removed)
+    assert '0315dc9c-883e-4454-b7e1-3fa88875eafe' in text
+    file.write_text(text)
+    print(file.name, ': two marked Ø2.4 holes removed; Ø4.2 reset retained.')
+
 
 def revise(source, target, lhs):
     old = source.read_text()
@@ -61,3 +78,5 @@ if __name__ == '__main__':
     revise(lhs,lhs,True)
     revise(ROOT/'Kicad/ble_plate_scr.kicad_pcb',
            ROOT/'Kicad/ble_plate_scr_rhs_no_side_usb.kicad_pcb',False)
+    for file in [lhs, ROOT/'Kicad/ble_plate_scr_rhs_no_side_usb.kicad_pcb']:
+        remove_unused_holes(file)

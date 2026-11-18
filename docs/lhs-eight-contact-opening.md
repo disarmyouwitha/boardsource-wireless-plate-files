@@ -14,4 +14,10 @@ Rebuild the native draft with `python3 tools/extend_lhs_header.py`, then run `py
 
 ## Side USB revision
 
-At the owner’s request the side USB recess, between the header slot and reset hole, is filled on both new variants. The inner perimeter follows x=187.616096 through the former recess. Reset and mounting circles are unchanged byte-for-byte by the editing script. The LHS keeps the 22.12 × 3.08 mm opening; the RHS keeps the original closed 14.50 × 3.08 mm slot. Top USB notches remain. RHS output uses the common source orientation, matching the original file: mirror for right-hand fabrication. Both updated native files have zero DRC errors and the same four warnings recorded above. Separate DXFs are exported in millimetres.
+At the owner’s request the side USB recess, between the header slot and reset hole, is filled on both new variants. The inner perimeter follows x=187.616096 through the former recess. The larger reset circles are retained. The subsequent marked-hole revision removes two small circles per half, as detailed below. The LHS keeps the 22.12 × 3.08 mm opening; the RHS keeps the original closed 14.50 × 3.08 mm slot. Top USB notches remain. RHS output uses the common source orientation, matching the original file: mirror for right-hand fabrication. Both updated native files have zero DRC errors and the same four warnings recorded above. Separate DXFs are exported in millimetres.
+
+## Marked-hole revision and print sheet
+
+The owner marked two small holes on each half for removal. Removed the Ø2.4 mm circles at source centres (168.619192, 94.285564) and (183.051192, 102.806564). The Ø4.2 mm reset hole at (178.9825, 101.855) and the five other circular holes remain. These coordinates use the common, unmirrored source frame. No other geometry changed in this revision.
+
+The [print-ready US Letter PDF](../output/pdf/ble-plates-1to1-fit-check.pdf) reflects this current state. It has one half per page, with the right half already mirrored, a 100 mm ruler, and a 25.4 mm square. Print at Actual Size / 100%, with no Fit or Shrink. Check physical header alignment before ordering. The [SVG](../assets/ble-plate-lhs-8pin-1to1.svg) remains a left-only alternative.

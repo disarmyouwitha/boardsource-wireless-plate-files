@@ -1,6 +1,6 @@
 # Boardsource Wireless Switch Plate Files
 
-Custom switch plate files for the **Boardsource Unicorne** keyboard, adapted for wireless (BLE) builds. This repository contains KiCad project files and exported DXF plots ready for fabrication.
+Custom switch plate files for the **Boardsource Unicorne** keyboard, adapted for wireless (BLE) builds. This repository contains KiCad project files and exported DXF plots for fabrication workflows. The revised LHS/RHS pair is a draft pending the physical print-template check.
 
 These files were based on and modified from the original Boardsource open hardware repository:
 [boardsource/open-files](https://github.com/boardsource/open-files/tree/master)
@@ -23,7 +23,7 @@ These files were based on and modified from the original Boardsource open hardwa
 
 ## File Structure
 
-The new LHS opening is **22.12 mm to the inner edge × 3.08 mm high**, with a rounded switch-facing end. Reset-button holes are retained. This is a photo-matched mechanical draft; check the [actual-size sheet](assets/ble-plate-lhs-8pin-1to1.svg) on the physical host before cutting. Both new variants fill the side USB recess while retaining reset holes and the top USB notch. The original screen plate/DXF remain unchanged as a baseline. The new RHS file retains the common source orientation: mirror it for right-hand fabrication. Existing STEP exports represent the original designs, **not** this LHS revision. [Dimensions and checks](docs/lhs-eight-contact-opening.md)
+The new LHS opening is **22.12 mm to the inner edge × 3.08 mm high**, with a rounded switch-facing end. The large reset-button holes are retained; the two small marked holes on each revised half are removed. This is a photo-matched mechanical draft; check the [actual-size sheet](assets/ble-plate-lhs-8pin-1to1.svg) on the physical host before cutting. Both new variants fill the side USB recess while retaining reset holes and the top USB notch. The original screen plate/DXF remain unchanged as a baseline. The new RHS file retains the common source orientation: mirror it for right-hand fabrication. Existing STEP exports represent the original designs, **not** this LHS revision. [Dimensions and checks](docs/lhs-eight-contact-opening.md) · [Print-ready 1:1 PDF](output/pdf/ble-plates-1to1-fit-check.pdf) · [Manufacturing options](docs/manufacturing-options.md)
 
 ![Modified pair with side USB recesses removed](assets/ble-plate-no-side-usb-pair.png)
 
@@ -50,7 +50,7 @@ boardsource-wireless-plate-files/
 
 ## CNC Machining
 
-The `.step` files in this repo are ready to be ordered via **[JLCPCB CNC Machining](https://jlcpcb.com/cnc-machining)**.
+The existing `.step` files cover the original designs only, not the revised left/right pair. They can be quoted via **[JLCPCB CNC Machining](https://jlcpcb.com/cnc-machining)**.
 
 **Recommended settings:**
 - **File format**: Upload the `.step` file under *3D Machining*

@@ -3395,29 +3395,9 @@ AcDbLine
  31
 0
   0
-CIRCLE
-  5
-91
-330
-1A
-100
-AcDbEntity
-  8
-Edge.Cuts
-100
-AcDbCircle
- 10
-168.6191919999999982
- 20
--94.2855639999999937
- 30
-0
- 40
-1.2
-  0
 ARC
   5
-92
+91
 330
 1A
 100
@@ -3443,7 +3423,7 @@ AcDbArc
   0
 LINE
   5
-93
+92
 330
 1A
 100
@@ -3469,7 +3449,7 @@ AcDbLine
   0
 LINE
   5
-94
+93
 330
 1A
 100
@@ -3495,7 +3475,7 @@ AcDbLine
   0
 ARC
   5
-95
+94
 330
 1A
 100
@@ -3521,7 +3501,7 @@ AcDbArc
   0
 ARC
   5
-96
+95
 330
 1A
 100
@@ -3547,7 +3527,7 @@ AcDbArc
   0
 LINE
   5
-97
+96
 330
 1A
 100
@@ -3573,7 +3553,7 @@ AcDbLine
   0
 ARC
   5
-98
+97
 330
 1A
 100
@@ -3599,7 +3579,7 @@ AcDbArc
   0
 LINE
   5
-99
+98
 330
 1A
 100
@@ -3625,7 +3605,7 @@ AcDbLine
   0
 ARC
   5
-9A
+99
 330
 1A
 100
@@ -3651,7 +3631,7 @@ AcDbArc
   0
 LINE
   5
-9B
+9A
 330
 1A
 100
@@ -3677,7 +3657,7 @@ AcDbLine
   0
 ARC
   5
-9C
+9B
 330
 1A
 100
@@ -3703,7 +3683,7 @@ AcDbArc
   0
 LINE
   5
-9D
+9C
 330
 1A
 100
@@ -3729,7 +3709,7 @@ AcDbLine
   0
 CIRCLE
   5
-9E
+9D
 330
 1A
 100
@@ -3749,7 +3729,7 @@ AcDbCircle
   0
 LINE
   5
-9F
+9E
 330
 1A
 100
@@ -3775,7 +3755,7 @@ AcDbLine
   0
 LINE
   5
-A0
+9F
 330
 1A
 100
@@ -3801,7 +3781,7 @@ AcDbLine
   0
 ARC
   5
-A1
+A0
 330
 1A
 100
@@ -3827,7 +3807,7 @@ AcDbArc
   0
 ARC
   5
-A2
+A1
 330
 1A
 100
@@ -3853,7 +3833,7 @@ AcDbArc
   0
 LINE
   5
-A3
+A2
 330
 1A
 100
@@ -3879,7 +3859,7 @@ AcDbLine
   0
 LINE
   5
-A4
+A3
 330
 1A
 100
@@ -3905,7 +3885,7 @@ AcDbLine
   0
 ARC
   5
-A5
+A4
 330
 1A
 100
@@ -3931,7 +3911,7 @@ AcDbArc
   0
 LINE
   5
-A6
+A5
 330
 1A
 100
@@ -3957,7 +3937,7 @@ AcDbLine
   0
 ARC
   5
-A7
+A6
 330
 1A
 100
@@ -3981,29 +3961,9 @@ AcDbArc
  51
 87.05750363
   0
-CIRCLE
-  5
-A8
-330
-1A
-100
-AcDbEntity
-  8
-Edge.Cuts
-100
-AcDbCircle
- 10
-183.0511919999999861
- 20
--102.8065639999999945
- 30
-0
- 40
-1.2
-  0
 ARC
   5
-A9
+A7
 330
 1A
 100
@@ -4029,7 +3989,7 @@ AcDbArc
   0
 LINE
   5
-AA
+A8
 330
 1A
 100
@@ -4055,7 +4015,7 @@ AcDbLine
   0
 LINE
   5
-AB
+A9
 330
 1A
 100
@@ -4081,7 +4041,7 @@ AcDbLine
   0
 ARC
   5
-AC
+AA
 330
 1A
 100
@@ -4107,7 +4067,7 @@ AcDbArc
   0
 LINE
   5
-AD
+AB
 330
 1A
 100
@@ -4133,7 +4093,7 @@ AcDbLine
   0
 ARC
   5
-AE
+AC
 330
 1A
 100
@@ -4159,7 +4119,7 @@ AcDbArc
   0
 LINE
   5
-AF
+AD
 330
 1A
 100
@@ -4185,7 +4145,7 @@ AcDbLine
   0
 CIRCLE
   5
-B0
+AE
 330
 1A
 100
@@ -4221,7 +4181,7 @@ AcDbDictionary
   3
 ACAD_GROUP
 350
-B1
+AF
   3
 ACAD_LAYOUT
 350
@@ -4233,7 +4193,7 @@ ACAD_PLOTSTYLENAME
   0
 DICTIONARY
   5
-B1
+AF
 330
 20
 100
