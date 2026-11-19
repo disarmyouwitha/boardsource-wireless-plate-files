@@ -6,9 +6,9 @@
     "counts": {
       "LINE": 106,
       "ARC": 20,
-      "CIRCLE": 6
+      "CIRCLE": 5
     },
-    "cut_length_mm": 1712.788766894953,
+    "cut_length_mm": 1699.5940777498756,
     "verified": "round-trip reflection and lengths match source within 0.000001 mm"
   },
   "RIGHT": {
@@ -18,9 +18,9 @@
     "counts": {
       "LINE": 106,
       "ARC": 22,
-      "CIRCLE": 6
+      "CIRCLE": 5
     },
-    "cut_length_mm": 1703.279564367864,
+    "cut_length_mm": 1690.0848752227869,
     "verified": "round-trip reflection and lengths match source within 0.000001 mm"
   }
 }

@@ -15,3 +15,7 @@ JLCCNC's [ordering guide](https://jlccnc.com/help/article/how-to-place-cnc-order
 Plate thickness is a separate decision from the StenoSquid flash PCB's 1.6 mm fabrication choice. Measure the existing plate and verify switch clips/socket-stack clearance. The inherited README's 1.2 mm recommendation and native KiCad's 1.6 mm setting are not a newly verified thickness requirement.
 
 Use `fabrication/dxf/LEFT-aluminum-plate-mm.dxf` and `fabrication/dxf/RIGHT-aluminum-plate-mm.dxf` for quoting. The right file is already mirrored, matching the PDF; do not mirror either file again. The older source DXFs in `Ble Plate Plots/` retain the common editing orientation. The PDF is for paper fit review, not a cutting order. No order placed through these services as part of this plate revision.
+
+## Black anodized aluminum requirement
+
+Owner measured existing plate at 1.14 mm and requires black aluminum. The original README recommended 1.2 mm; the native CAD thickness was 1.6 mm. DXF geometry is independent of thickness. 1.2 mm is 0.06 mm above the owner measurement; physical switch/socket fit still needs checking. SendCutSend lists black Type II anodizing starting at 0.063 in (1.6 mm), so its 0.040 in unfinished quote is unsuitable. [Anodizing specifications](https://sendcutsend.com/services/anodizing/). A custom supplier quote for 1.2 mm aluminum with black anodizing is needed to keep near the original thickness. Do not substitute 1.6 mm solely to obtain a finish without a stack/clip fit check.

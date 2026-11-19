@@ -35,12 +35,12 @@ for page,(side,name,mirrored) in enumerate([
     text(18,21,f'{side} PLATE - 1:1 FIT CHECK',17)
     text(18,30,'Print ACTUAL SIZE / 100%. Disable Fit, Shrink and scaling.',10)
     text(18,37,'US Letter (8.5 x 11 in). Check the rulers before comparing the hardware.',9)
-    text(18,47,'Current draft: side USB recess filled; two marked small holes removed.',9)
-    text(18,54,'Large reset hole and top USB notch retained. '+
+    text(18,47,'Current draft: side USB recess filled; marked small holes and reset holes removed.',9)
+    text(18,54,'Top USB notch retained. '+
          ('Eight-contact open slot.' if not mirrored else 'Original closed display slot.'),9)
     ss=shapes(ROOT/'Kicad'/f'{name}.kicad_pcb')
     polys=loops(ss)
-    expected=29 if mirrored else 28  # RHS also has a closed display slot.
+    expected=28 if mirrored else 27  # RHS also has a closed display slot.
     assert len(polys)==expected, f'{side}: unexpected closed-contour count {len(polys)}'
     xmin=min(p[0] for ps in ss for p in ps);xmax=max(p[0] for ps in ss for p in ps)
     ymin=min(p[1] for ps in ss for p in ps);ymax=max(p[1] for ps in ss for p in ps)
@@ -55,7 +55,7 @@ for page,(side,name,mirrored) in enumerate([
         for p in ps[1:]:path.lineTo(*xy(p))
         c.drawPath(path)
     text(18,180,'Trace the red outline. The right page is already mirrored into its final orientation.',9)
-    text(18,187,'Check: header/socket access, switch clearance, reset access and mounting alignment.',9)
+    text(18,187,'Check: header/socket access, switch clearance and mounting alignment.',9)
     c.setStrokeColorRGB(0,0,0);c.setLineWidth(.2*mm)
     y=H-207*mm;c.line(18*mm,y,118*mm,y)
     for i in range(11):

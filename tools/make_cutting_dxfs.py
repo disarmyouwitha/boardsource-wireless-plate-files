@@ -70,7 +70,7 @@ for side,name,flip in [('LEFT','ble_plate_screen_lhs_8pin',False),
                        ('RIGHT','ble_plate_screen_rhs_no_side_usb',True)]:
     template=ROOT/'Ble Plate Plots'/f'{name}.dxf'
     source=read(template)
-    assert sum(e['type']=='CIRCLE' for e in source)==6, 'Unexpected drilling circles'
+    assert sum(e['type']=='CIRCLE' for e in source)==5, 'Unexpected drilling circles'
     # Reflection about x=0 is sufficient: only handedness changes, never scale.
     target=[mirror(e,0) if flip else e.copy() for e in source]
     file=out/f'{side}-aluminum-plate-mm.dxf';write(file,target,template)

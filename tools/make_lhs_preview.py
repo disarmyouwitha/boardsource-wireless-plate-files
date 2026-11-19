@@ -47,7 +47,7 @@ new=shapes(ROOT/'Kicad/ble_plate_scr_lhs_8pin.kicad_pcb')
 im=Image.new('RGB',(1800,1020),'#f5f6f8'); d=ImageDraw.Draw(im)
 font=lambda size:ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial.ttf',size)
 d.text((45,25),'BLE screen plate — left-hand 8-contact opening',font=font(34),fill='#172b42')
-d.text((45,78),'Side USB recess filled on both halves; reset holes retained. Red marks the left header slot.',font=font(22),fill='#435366')
+d.text((45,78),'Side USB recess filled on both halves; reset holes removed. Red marks the left header slot.',font=font(22),fill='#435366')
 for label,ss,offset in [('Original left',old,60),('Revised left',new,930)]:
     d.text((offset,140),label,font=font(28),fill='#172b42')
     xy=lambda p:(offset+(p[0]-50.166096)*5.5,210+(p[1]-38.019142)*5.5)
@@ -64,7 +64,7 @@ out=ROOT/'assets';out.mkdir(exist_ok=True)
 im.save(out/'ble-plate-lhs-8pin-comparison.png')
 pair=Image.new('RGB',(1800,850),'#f5f6f8'); pd=ImageDraw.Draw(pair)
 pd.text((50,25),'Revised pair — side USB recesses removed',font=font(34),fill='#172b42')
-pd.text((50,80),'LEFT: eight-contact opening     /     RIGHT: original display slot     /     Reset holes retained',font=font(23),fill='#435366')
+pd.text((50,80),'LEFT: eight-contact opening     /     RIGHT: original display slot     /     Reset holes removed',font=font(23),fill='#435366')
 rhs=shapes(ROOT/'Kicad/ble_plate_scr_rhs_no_side_usb.kicad_pcb')
 for ss,offset,mirror in [(new,60,False),(rhs,930,True)]:
     def xy(p):
