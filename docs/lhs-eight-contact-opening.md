@@ -10,7 +10,7 @@ The LHS variant also repairs three inherited outline endpoint gaps smaller than 
 
 KiCad native DRC: no errors or malformed-outline violations after these repairs. Four warnings remain: two isolated unconnected copper pours, the unavailable `bs_custom_kicad` mounting-hole library, and a nonmirrored back reference label. The edge-only DXF excludes copper, library references, and text. The source plate had an invalid-outline error before this edit. No design-rule checks were disabled for this work.
 
-Rebuild the native draft with `python3 tools/extend_lhs_header.py`, then run `python3 tools/close_side_usb.py` to fill the side USB recesses and build the RHS variant, and refill zones before saving/exporting. Render the preview with `python3 tools/make_lhs_preview.py` (Pillow required). The 1:1 check sheet approximates arcs with fine polylines; use the native KiCad/DXF, which retain real arcs, for fabrication. Existing STEP files have not been regenerated for the LHS variant.
+Rebuild the native draft with `python3 tools/extend_lhs_header.py`, then run `python3 tools/close_side_usb.py` to fill the side USB recesses and build the RHS variant, and refill zones before saving/exporting. Render the preview with `python3 tools/make_lhs_preview.py` (Pillow required). The 1:1 check sheet approximates arcs with fine polylines; use the native KiCad/DXF, which retain real arcs, for fabrication. Build the revised 1.2 mm STEP pair with `python3 tools/make_plate_steps.py`. The right STEP is exported in its final handedness.
 
 ## Side USB revision
 

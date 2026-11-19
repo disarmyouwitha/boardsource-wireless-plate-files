@@ -6,7 +6,7 @@ Checked 2026-11-18. These are quoting options, not confirmed quotes or guarantee
 |---|---|---|
 | [JLCPCB FR4 PCB fabrication](https://jlcpcb.com/pcb-fabrication/fr4-pcb) | Make the switch plates as unassembled FR4 PCB parts | Export dedicated Gerber/drill packages after fit approval and plate-thickness selection; current DXFs/PDF are not PCB order packages. |
 | [SendCutSend G10/FR4](https://sendcutsend.com/materials/g10-fr4/) | Waterjet-cut G10/FR4 sheet; catalog includes nominal 1.6 mm stock | Upload the separate edge-only DXFs; use the already-oriented LEFT/RIGHT files in `fabrication/dxf/`. Confirm slot, switch-hole tolerances and material thickness in the quote. |
-| [JLCCNC](https://jlccnc.com/) | CNC machining; service lists FR4 | Generate new STEP models for the revised plates at the chosen thickness. Original STEP files in this repo are outdated for this revision. |
+| [JLCCNC Sheet Metal](https://jlccnc.com/sheet-metal-fabrication) | 1.2 mm aluminum with black anodizing, subject to quote | Upload the two revised 1.2 mm STEP models in `fabrication/step/`. |
 
 SendCutSend accepts [DXF and other 2D vector files](https://sendcutsend.com/faq/what-file-type-format-can-i-send-you/). Its FR4 catalog lists waterjet tolerance +/-0.009 in (about 0.23 mm), so request confirmation that the switch openings/rounded slot end are suitable before selecting that route. The native plate switch holes are 14.05 mm nominal; service tolerance matters for switch fit.
 
@@ -18,4 +18,4 @@ Use `fabrication/dxf/LEFT-aluminum-plate-mm.dxf` and `fabrication/dxf/RIGHT-alum
 
 ## Black anodized aluminum requirement
 
-Owner measured existing plate at 1.14 mm and requires black aluminum. The original README recommended 1.2 mm; the native CAD thickness was 1.6 mm. DXF geometry is independent of thickness. 1.2 mm is 0.06 mm above the owner measurement; physical switch/socket fit still needs checking. SendCutSend lists black Type II anodizing starting at 0.063 in (1.6 mm), so its 0.040 in unfinished quote is unsuitable. [Anodizing specifications](https://sendcutsend.com/services/anodizing/). A custom supplier quote for 1.2 mm aluminum with black anodizing is needed to keep near the original thickness. Do not substitute 1.6 mm solely to obtain a finish without a stack/clip fit check.
+Owner measured existing plate at 1.14 mm and requires black aluminum. The original README recommended 1.2 mm; the native CAD thickness was 1.6 mm. DXF geometry is independent of thickness. 1.2 mm is 0.06 mm above the owner measurement; physical switch/socket fit still needs checking. SendCutSend lists black Type II anodizing starting at 0.063 in (1.6 mm), so its 0.040 in unfinished quote is unsuitable. [Anodizing specifications](https://sendcutsend.com/services/anodizing/). JLCCNC lists 1.2 mm sheet, 5052 aluminum and black anodizing. Confirm the combination for these parts in the quote. Do not substitute 1.6 mm solely to obtain a finish without a stack/clip fit check.

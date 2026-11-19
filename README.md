@@ -29,7 +29,7 @@ Use [LEFT-aluminum-plate-mm.dxf](fabrication/dxf/LEFT-aluminum-plate-mm.dxf) and
 
 ## File Structure
 
-The new LHS opening is **22.12 mm to the inner edge × 3.08 mm high**, with a rounded switch-facing end. The large reset-button holes and the two small marked holes on each revised half are removed. This is a photo-matched mechanical draft; check the [actual-size sheet](assets/ble-plate-lhs-8pin-1to1.svg) on the physical host before cutting. Both new variants fill the side USB recess while retaining the top USB notch. The original screen plate/DXF remain unchanged as a baseline. The native RHS and older source DXF retain the common source orientation. The files under `fabrication/dxf/` are the ready-oriented cutting exports; use those for quoting. Existing STEP exports represent the original designs, **not** this LHS revision. [Dimensions and checks](docs/lhs-eight-contact-opening.md) · [Print-ready 1:1 PDF](output/pdf/ble-plates-1to1-fit-check.pdf) · [Manufacturing options](docs/manufacturing-options.md)
+The new LHS opening is **22.12 mm to the inner edge × 3.08 mm high**, with a rounded switch-facing end. The large reset-button holes and the two small marked holes on each revised half are removed. This is a photo-matched mechanical draft; check the [actual-size sheet](assets/ble-plate-lhs-8pin-1to1.svg) on the physical host before cutting. Both new variants fill the side USB recess while retaining the top USB notch. The original screen plate/DXF remain unchanged as a baseline. The native RHS and older source DXF retain the common source orientation. The files under `fabrication/dxf/` are the ready-oriented cutting exports; use those for quoting. The revised [1.2 mm STEP pair](fabrication/step/) matches these cutting files. [Dimensions and checks](docs/lhs-eight-contact-opening.md) · [Print-ready 1:1 PDF](output/pdf/ble-plates-1to1-fit-check.pdf) · [Manufacturing options](docs/manufacturing-options.md)
 
 ![Modified pair with side USB recesses removed](assets/ble-plate-no-side-usb-pair.png)
 
@@ -54,17 +54,8 @@ boardsource-wireless-plate-files/
 - **KiCad files** (`.kicad_pcb`) can be opened with [KiCad EDA](https://www.kicad.org/) for editing or generating manufacturing files.
 - **DXF files** can be used directly for laser cutting or sent to a PCB fabrication service.
 
-## CNC Machining
+## JLCCNC quote
 
-The existing `.step` files cover the original designs only, not the revised left/right pair. They can be quoted via **[JLCPCB CNC Machining](https://jlcpcb.com/cnc-machining)**.
+Upload the revised [left STEP](fabrication/step/LEFT-aluminum-plate-1p2mm.step) and [right STEP](fabrication/step/RIGHT-aluminum-plate-1p2mm.step) as separate parts. The right model is already mirrored. Both are 1.2 mm solid models of the current outlines, with the reset holes removed.
 
-**Recommended settings:**
-- **File format**: Upload the `.step` file under *3D Machining*
-- **Material**: FR4 (1.2 mm) or Aluminum (1.2 mm)
-- **Thickness**: 1.2 mm
-- **Surface finish**: Anodized (if Aluminum) or leave as default
-
-> [!NOTE]
-> If your design includes **threaded holes**, you must also upload a `.dxf` drawing alongside the `.step` file so JLCPCB can correctly identify thread specs.
-
-![JLCCNC CNC order screenshot](./assets/jlccnc.png)
+For these flat plates, start with [JLCCNC Sheet Metal](https://jlccnc.com/sheet-metal-fabrication) and specify 1.2 mm 5052 aluminum with black anodizing. Confirm those selections in the quote. [Will's original README](https://github.com/WillACosta/boardsource-wireless-plate-files#cnc-machining) recommends 1.2 mm aluminum and anodizing through the 3D Machining workflow. The legacy STEP files under `Ble Plate Plots/` cover the previous geometry.
